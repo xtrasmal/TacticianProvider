@@ -1,2 +1,3 @@
-# TacticianProvider
-Laravel Service Provider so you can use the Tactician Commandbus in your projects
+# TacticianBundle
+Laravel ServiceProvider for the Tactician library
+[https://github.com/thephpleague/tactician/](https://github.com/thephpleague/tactician/)
