@@ -12,23 +12,39 @@ class TacticianServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
+	 * Boot the service provider.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->publishes([
+			__DIR__.'/../../config/modules.php' => config_path('modules.php'),
+		]);
+	}
+
+	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
 	{
-		//
+		$this->mergeConfigFrom(
+			__DIR__.'/../../config/tactician.php', 'tactician'
+		);
+
+
 	}
 
 	/**
 	 * Get the services provided by the provider.
 	 *
-	 * @return array
+	 * @return string
 	 */
 	public function provides()
 	{
-		return [];
+		return ['tactician'];
 	}
 
 }
