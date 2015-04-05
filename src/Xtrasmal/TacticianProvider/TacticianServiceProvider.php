@@ -19,7 +19,7 @@ class TacticianServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->publishes([
-			__DIR__.'/../../config/modules.php' => config_path('modules.php'),
+			__DIR__.'/../../config/tactician.php' => config_path('tactician.php'),
 		]);
 	}
 
