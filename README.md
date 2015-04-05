@@ -22,3 +22,48 @@ Then register it in your config/app.php.
 ```
 
 That's it! 
+
+## Configuring Command Handlers
+The most common use case with Tactician is passing a Command to the Command Bus and having it routed to the Command Bus.
+
+Since handlers often have extra dependencies and are best lazily-loaded, you'll want to register them in the IoC container.
+
+Let's say we have two classes, `RegisterUserCommand` and `RegisterUserHandler`. Add the following to config/tactician.php
+ 
+```php
+
+return [
+
+    'buses' => [
+
+        'default' => [
+
+            'commandbus' => 'League\Tactician\CommandBus',
+
+            'middleware' => [
+                // ...
+            ],
+
+            'commmands' => [
+
+                'RegisterUser' => [
+                    'command' => 'Namespace\RegisterUserCommand',
+                    'handler' => 'Namespace\RegisterUserHandler'
+                ],
+                'RemoveUser' => [
+                    'command' => 'Namespace\RemoveUserCommand',
+                    'handler' => 'Namespace\RemoveUserHandler'
+                ],                
+                
+                // ...
+
+            ],
+
+        ],
+
+    ],
+];
+
+```
+
+
