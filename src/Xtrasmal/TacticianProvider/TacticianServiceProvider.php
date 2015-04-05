@@ -34,7 +34,24 @@ class TacticianServiceProvider extends ServiceProvider {
 			__DIR__.'/../../config/tactician.php', 'tactician'
 		);
 
+		$this->registerServices();
 
+	}
+
+	/**
+	 * Register the package services.
+	 *
+	 * @return void
+	 */
+	protected function registerServices()
+	{
+		$this->app->bindShared('tactician', function ($app) {
+			return new Tactician($app['config'], $app['files']);
+		});
+
+		$this->app->booting(function ($app) {
+			$app['tactician']->register();
+		});
 	}
 
 	/**
