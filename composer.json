@@ -1,6 +1,7 @@
 {
     "name": "xtrasmal/tactician-provider",
-    "description": "",
+    "description": "Laravel ServiceProvider for the Tactician CommandBus library",
+    "keywords": ["laravel", "tactician", "commandbus"],
     "authors": [
         {
             "name": "xander smalbil",
