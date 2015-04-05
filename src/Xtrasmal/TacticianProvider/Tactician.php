@@ -30,14 +30,16 @@ class Tactician
     }
 
     /**
-     * Register stuff.
+     * Register all commandbuses and such from the config.
      *
      * @return mixed
      */
     public function register()
     {
+        // Get the buses and loop through them
+        // for each bus do app::make or something
+        $buses = $this->config->get('buses');
 
-        //
 
     }
 
