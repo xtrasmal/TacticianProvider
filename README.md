@@ -7,3 +7,18 @@ Laravel ServiceProvider for the Tactician library
 [https://github.com/thephpleague/tactician/](https://github.com/thephpleague/tactician/)
 
 If you are looking for a Symfony2 Bundle or want to help: [https://github.com/xtrasmal/TacticianBundle](https://github.com/xtrasmal/TacticianBundle)
+
+## Setup 
+First add this provider to your composer dependencies:
+
+`> composer require xtrasmal\tactician-provider`
+
+Then register it in your config/app.php.
+
+```php
+	'providers' => [
+		'Xtrasmal\TacticianProvider\TacticianServiceProvider',
+            // ...
+```
+
+That's it! 
